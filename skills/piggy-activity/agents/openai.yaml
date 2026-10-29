@@ -1,0 +1,4 @@
+interface:
+  display_name: "小猪在干嘛"
+  short_description: "粘贴一句或几句聊天原文，自动生成对应台词、动作和场景的小猪漫画"
+  default_prompt: "使用 $piggy-activity，把接下来粘贴的聊天原文画成小猪漫画，原样保留台词并自动推断表情、动作和场景。"
