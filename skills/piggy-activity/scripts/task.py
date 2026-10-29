@@ -24,8 +24,8 @@ def prepare(args):
     if not text.strip() or not prompt.strip():
         raise ValueError("原文和提示词不能为空。")
     for path in references:
-        if not path.is_file() or path.suffix.lower() != ".png":
-            raise ValueError("参考图必须是现有PNG文件：" + str(path))
+        if not path.is_file() or path.suffix.lower() not in (".png", ".jpg", ".jpeg"):
+            raise ValueError("参考图必须是现有PNG或JPEG文件：" + str(path))
     root = args.output_dir.expanduser().resolve()
     root.mkdir(parents=True, exist_ok=True, mode=0o700)
     task = root / (datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid4().hex[:10])
